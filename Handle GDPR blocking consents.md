@@ -26,7 +26,20 @@ _or:_
 ~region: "United States"
 ```
 
-## b) Implement vendor-specific GDPR anti-measures
+## b) Allow the template to spoof the user agent
+
+Another truly versatile solution would be to allow the template author to choose a different user agent.
+
+Websites must not render the GDPR blocking popup for crawlers such as Google because that would severly impact their ratings (at the same time rendering different content for crawlers is frowned-upon). This is one of the reasons user agent spoofing might work.
+
+I believe the template author should not be able to choose the user agent string, but rather choose from a preselected set of choices (Google and whatever crawlers exist nowadays). This is due to the fact that a malevolent user could be able to determine precisely which IPs are used by the Telegram bot by probing the user agent (unless you already expose this information).
+
+A simple variant would be:
+```
+~useragent: google-bot
+```
+
+## c) Implement vendor-specific GDPR anti-measures
 For example, as mentioned previously, [health.com](health.com) uses _OneTrust Privacy Portal_.
 
 Doing a short analysis, it seems that the GDPR consent can be easily bypassed by using generating the following cookie for the target domain:
