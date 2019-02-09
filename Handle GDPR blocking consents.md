@@ -36,7 +36,7 @@ euConsent: true
 
 In turn, this can be done in multiple ways:
 
-1. Make the Instant View processing algorithm automatically look for signs of a GDPR consent and generate the appropriate cookie (most probably all contest solutions are cookie-based).
+1. Make the Instant View processing algorithm automatically look for signs of a GDPR consent and generate the appropriate cookie (most probably all consent solutions are cookie-based).
 2. Have Instant View generate by default all known cookies for GDPR consents, simplifying development time significantly.
 3. Implement anti-measures for well-known consent solutions and have them manually turned on by template authors via something like `~gdpr: onetrust`.
 4. The most powerful (and possibly unsafe?) method would be to allow template authors to generate cookies on behalf of the Instant View crawler, via something like `@cookie("euConsent", "true")` or `~cookie: "euConsent: true"`.
